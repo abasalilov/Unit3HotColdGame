@@ -1,0 +1,90 @@
+
+<body>
+        <nav>
+            <ul>
+                <li class="name">
+                   Hot and Cold Game - Aleksandr Basalilov
+                </li>
+        </nav>
+        <header>
+            <h1 class="header-title">Hot & Cold GameProject</h1>
+<script type="text/javascript">
+var secretNumber = Math.floor((Math.random() * 100) + 1);
+
+var numOfGuesses = 0;
+
+var guess = undefined;
+
+var guessedSoFar = [];
+
+function submit() {
+    if(secretNumber === guess){
+        return 'You guessed it! Congratulations! Play again!';
+        numOfGuesses++;
+        console.log("Guess # "+numOfGuesses);
+        secretNumber; 
+    }
+    else if(guess===NaN || (guess%1) !=0){
+        console.log('Please try again, enter a number!');
+        numOfGuesses++;
+    } 
+    else if((guess % 1) != 0) {
+        console.log('Please try again, enter a whole number!');
+                numOfGuesses++;
+                guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+    }   else if ((Math.abs(guess - secretNumber)) > 50 ) {
+        console.log('ICE BERG!');
+                numOfGuesses++;
+                guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+        console.log("Guess # "+numOfGuesses);
+    }
+    else if ((Math.abs(guess - secretNumber)) > 40 && (Math.abs(guess - secretNumber)) < 50){
+        console.log('ICE COLD MOFO!');
+                numOfGuesses++;
+                guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+        console.log("Guess # "+numOfGuesses);
+    } 
+    else if ((Math.abs(guess - secretNumber)) > 30 && (Math.abs(guess - secretNumber)) <  40) { 
+        console.log('BRRRR COLD!');
+                numOfGuesses++;
+                console.log("Guess # "+numOfGuesses);
+                guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+    }
+    else if ((Math.abs(guess - secretNumber)) > 20 && (Math.abs(guess - secretNumber)) < 30){
+        console.log("Luke warm, please try again");
+                numOfGuesses++;
+        console.log("Guess # "+numOfGuesses);
+        guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+    }
+    else if ((Math.abs(guess - secretNumber)) > 5 && (Math.abs(guess - secretNumber)) < 20){
+        console.log("Getting warmer!");
+                numOfGuesses++;
+        console.log("Guess # "+numOfGuesses);
+        guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+    }
+     else if ((Math.abs(guess - secretNumber)) > 1 && (Math.abs(guess - secretNumber)) < 5){
+        console.log("Ahhhhhhh! Burning hot, you are right there!");
+                numOfGuesses++;
+        console.log("Guess # "+numOfGuesses);
+        guessedSoFar.push(guess);
+                console.log("numbers used " + guessedSoFar);
+    }
+}
+
+
+</script>
+        </header>
+        <main>
+      
+        </main>
+        <footer>
+            <p>(c) 2016 Aleks Basalilov</p>
+        </footer>
+    </body>
+</html>
